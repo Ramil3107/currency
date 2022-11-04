@@ -1,10 +1,13 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import './App.css';
-import { CurrencyInput } from './CurrencyInput';
+import { Loader } from './common/loader/Loader';
+import { CurrencyInput } from './components/currencyInput/CurrencyInput';
+import { CurrentRates } from './components/currentRates/CurrentRates';
 
 function App() {
 
+  const [loader, setLoader] = useState(false)
   const [rates, setRates] = useState("")
   const [firstAmount, setFirstAmount] = useState(0)
   const [firstCurrency, setFirstCurrency] = useState("USD")
@@ -12,13 +15,22 @@ function App() {
   const [secondCurrency, setSecondCurrency] = useState("UAH")
 
   useEffect(() => {
-    axios.get("https://api.apilayer.com/exchangerates_data/latest?base=USD", {
-      headers: {
-        "apikey": "SwQ7B3jlZvnQ2jmXG9rJwJoYBBxmsLN7"
-      }
-    })
-      .then(response => response.data)
-      .then(data => setRates(data.rates))
+    setLoader(false)
+    try {
+      setLoader(true)
+      axios.get("https://api.apilayer.com/exchangerates_data/latest?base=USD", {
+        headers: {
+          "apikey": "SwQ7B3jlZvnQ2jmXG9rJwJoYBBxmsLN7"
+        }
+      })
+        .then(response => response.data)
+        .then(data => {
+          setRates(data.rates)
+          setLoader(false)
+        })
+    } catch {
+      setLoader(false)
+    }
   }, [])
 
   function handleFirstAmountChange(amount) {
@@ -43,6 +55,7 @@ function App() {
 
   return (
     <div className="App">
+      <CurrentRates />
       <CurrencyInput
         rates={rates}
         amount={firstAmount}
@@ -57,6 +70,7 @@ function App() {
         onChangeAmount={handleSecondAmountChange}
         onChangeCurrency={handleSecondCurrencyChange}
       />
+      {loader && <Loader />}
     </div>
   );
 }
