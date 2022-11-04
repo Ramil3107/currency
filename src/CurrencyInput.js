@@ -5,7 +5,7 @@ export const CurrencyInput = ({ rates, amount, currency, onChangeAmount, onChang
             <input
                 type="number"
                 value={amount}
-                onChange={(e) => onChangeAmount(e.target.value)}
+                onChange={(e) => onChangeAmount(e.target.value >= 0 ? e.target.value : "")}
                 disabled={!rates}
             />
             <select
