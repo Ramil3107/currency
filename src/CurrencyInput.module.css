@@ -1,26 +1,28 @@
 .currencyInput {
-    margin: 15px;
+  margin: 15px;
 }
 
 .amount {
-    width: 300px;
-    height: 45px;
-    padding: 5px;
-    border-color: aliceblue;
-    border-radius: 10px;
-    font-size: 25px;
-    color: aliceblue;
-    background-color: transparent;
+  width: 300px;
+  height: 45px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 0.5px solid aliceblue;
+  font-size: 25px;
+  color: aliceblue;
+  background-color: transparent;
 }
+
 .currency {
-    color: aliceblue;
-    width: 90px;
-    height: 55px;
-    padding: 5px;
-    border-color: aliceblue;
-    border-radius: 10px;
-    font-size: 25px;
-    background-color: transparent;
+  color: aliceblue;
+  width: 90px;
+  height: 55px;
+  padding: 5px;
+  border: 0.5px solid aliceblue;
+  border-radius: 10px;
+  font-size: 25px;
+  background-color: transparent;
+  margin-left: 15px;
 }
 
 
