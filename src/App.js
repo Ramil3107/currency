@@ -20,7 +20,7 @@ function App() {
       setLoader(true)
       axios.get("https://api.apilayer.com/exchangerates_data/latest?base=USD", {
         headers: {
-          "apikey": "SwQ7B3jlZvnQ2jmXG9rJwJoYBBxmsLN7"
+          "apikey": "rGNaqblX3zQWFxinR50pE8KTcb0oODFd"
         }
       })
         .then(response => response.data)
@@ -36,7 +36,6 @@ function App() {
   function format(number) {
     return number.toFixed(4)
   }
-
 
   function handleFirstAmountChange(amount) {
     setFirstAmount(amount);
