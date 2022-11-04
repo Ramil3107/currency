@@ -1,1 +1,1 @@
-### Currency exchange (React JS)
+### Exchange Rates
