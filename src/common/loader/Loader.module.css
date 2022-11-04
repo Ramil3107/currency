@@ -1,11 +1,10 @@
 .ldsRing {
   display: inline-block;
-  position: absolute;
-  top:5%;
-  left: 5%;
+  position: relative;
   width: 80px;
   height: 80px;
 }
+
 .ldsRing div {
   box-sizing: border-box;
   display: block;
@@ -18,19 +17,24 @@
   animation: ldsRing 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   border-color: #fff transparent transparent transparent;
 }
+
 .ldsRing div:nth-child(1) {
   animation-delay: -0.45s;
 }
+
 .ldsRing div:nth-child(2) {
   animation-delay: -0.3s;
 }
+
 .ldsRing div:nth-child(3) {
   animation-delay: -0.15s;
 }
+
 @keyframes ldsRing {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
