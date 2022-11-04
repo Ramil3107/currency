@@ -33,9 +33,14 @@ function App() {
     }
   }, [])
 
+  function format(number) {
+    return number.toFixed(4)
+  }
+
+
   function handleFirstAmountChange(amount) {
     setFirstAmount(amount);
-    setSecondAmount(amount * rates[secondCurrency] / rates[firstCurrency]);
+    amount > 0 ? setSecondAmount(format(amount * rates[secondCurrency] / rates[firstCurrency])) : setSecondAmount(0)
   }
 
   function handleFirstCurrencyChange(currency) {
@@ -45,7 +50,7 @@ function App() {
 
   function handleSecondAmountChange(amount) {
     setSecondAmount(amount);
-    setFirstAmount(amount * rates[firstCurrency] / rates[secondCurrency]);
+    amount > 0 ? setFirstAmount(format(amount * rates[firstCurrency] / rates[secondCurrency])) : setFirstAmount(0)
   }
 
   function handleSecondCurrencyChange(currency) {
