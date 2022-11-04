@@ -1,0 +1,38 @@
+.currencyInput {
+    margin: 15px;
+}
+
+.amount {
+    width: 300px;
+    height: 45px;
+    padding: 5px;
+    border-color: aliceblue;
+    border-radius: 10px;
+    font-size: 25px;
+    color: aliceblue;
+    background-color: transparent;
+}
+.currency {
+    color: aliceblue;
+    width: 90px;
+    height: 55px;
+    padding: 5px;
+    border-color: aliceblue;
+    border-radius: 10px;
+    font-size: 25px;
+    background-color: transparent;
+}
+
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
