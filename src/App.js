@@ -55,7 +55,7 @@ function App() {
 
   return (
     <div className="App">
-      <CurrentRates />
+      <CurrentRates rates={rates} />
       <CurrencyInput
         rates={rates}
         amount={firstAmount}
@@ -70,7 +70,7 @@ function App() {
         onChangeAmount={handleSecondAmountChange}
         onChangeCurrency={handleSecondCurrencyChange}
       />
-      {loader && <Loader />}
+      {loader && <div className='Loader'> <Loader /> </div>}
     </div>
   );
 }
